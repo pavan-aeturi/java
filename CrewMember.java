@@ -6,7 +6,7 @@ public class CrewMember extends RacePerson
 	static int MIN_AGE;
 	static int MIN_EXPERIENCE; 
 	
-	public CrewMember(String name, int age, int ID) {
+	public CrewMember(String name, int age, int ID,int experience) {
 		super(name, age, ID);
 		this.experience=experience;
 		this.MIN_AGE=20;
@@ -32,7 +32,7 @@ public class CrewMember extends RacePerson
 
 	@Override
 	public String getInfo() {
-		String s1=((RacePerson)this).getInfo();
+		String s1=((RacePerson)this).toString();
 		String s2="Experience : "+this.experience;
 		
 		return s1+"\n"+s2;

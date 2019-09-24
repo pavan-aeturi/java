@@ -1,4 +1,3 @@
-
 public class FourWheeler extends Vehicle
 {
 	
@@ -23,7 +22,7 @@ public class FourWheeler extends Vehicle
 	}
 	
 	public boolean verifyValidity() {
-		if(this.cost<=this.FOUR_WHEELER_MAX_COST && this.length<=this.FOUR_WHEELER_MAX_LENGTH && this.width<=FOUR_WHEELER_MAX_WIDTH)
+		if(this.cost<=this.FOUR_WHEELER_MAX_COST && this.length<=this.FOUR_WHEELER_MAX_LENGTH && this.width<=this.FOUR_WHEELER_MAX_WIDTH)
 		{
 			return true;
 		}

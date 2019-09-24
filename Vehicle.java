@@ -1,4 +1,3 @@
-
 public abstract class Vehicle {
 	protected int cost;
 	protected int length;
@@ -13,11 +12,11 @@ public abstract class Vehicle {
 		this.cost=cost;
 		
 	}
-	abstract java.lang.String getInfo();
+	public abstract java.lang.String getInfo();
 	public java.lang.String toString()
 	{
-		return "name ["+this.length+"x"+this.width+"] (cost)";
+		return this.name+" ["+this.length+"x"+this.width+"] ("+this.cost+")";
 	}
-	abstract boolean verifyValidity();
+	public abstract boolean verifyValidity();
 	
 }

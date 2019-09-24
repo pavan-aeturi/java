@@ -5,7 +5,7 @@ public class Driver extends RacePerson{
 	static int MIN_POINTS;
 	private int numRacesParticipated;
 	private int points;
-	public Driver(String name, int age, int ID) {
+	public Driver(String name, int age, int ID,int points, int numRacesParticipated) {
 		super(name, age, ID);
 		// TODO Auto-generated constructor stub
 		this.MAX_RACES=20;
@@ -34,13 +34,14 @@ public class Driver extends RacePerson{
 		return s+"\n"+s1+"\n"+s2;
 	}
 	public void participateInNewRace()
-	{
-		this.numRacesParticipated+=1;
-		this.calculateSkill();
+	{	if(this.MAX_RACES>this.numRacesParticipated)
+			{this.numRacesParticipated+=1;
+			 this.calculateSkill();
+			}
 	}
 	public boolean verifyValidity()
 	{
-		if(this.points>=this.MIN_POINTS && this.age>=this.MIN_AGE && this.numRacesParticipated<=this.MAX_RACES)
+		if(this.points>=this.MIN_POINTS && this.age>=this.MIN_AGE && this.numRacesParticipated<this.MAX_RACES)
 		{
 			return true;
 		}

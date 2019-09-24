@@ -10,7 +10,7 @@ public class Race extends java.lang.Object
 		this.MAX_TEAMS=10;
 		this.numTeams=0;
 		this.raceType=raceType;
-		this.teams=new Team[Race.MAX_TEAMS];
+		this.teams=new Team[MAX_TEAMS];
 		
 	}
 	public boolean addTeam(Team team)
@@ -18,6 +18,7 @@ public class Race extends java.lang.Object
 		if(this.MAX_TEAMS>this.numTeams)
 			if(team.verifyValidity(this.raceType))
 			{	this.teams[this.numTeams]=team;
+				this.teams[this.numTeams].getDriver().participateInNewRace();
 				this.numTeams+=1;
 				return true;
 			}
@@ -26,8 +27,8 @@ public class Race extends java.lang.Object
 	public Team findWinner()
 	{
 		Team t=this.teams[0];
-		int k=0;
-		for(int i=0;i<Race.MAX_TEAMS;i++)
+		int k=this.teams[0].getTeamSkill();
+		for(int i=0;i<this.numTeams;i++)
 		{
 			if((this.teams[i].getTeamSkill())>k)
 			{

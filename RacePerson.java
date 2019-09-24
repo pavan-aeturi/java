@@ -20,6 +20,6 @@ public abstract class RacePerson {
 	public abstract java.lang.String getInfo();
 	public java.lang.String toString()
 	{
-		return ("ID "+this.name+" "+"("+this.age+" "+"yrs"+")");
+		return (this.ID+" "+this.name+" "+"("+this.age+" "+"yrs"+")");
 	}
 }
